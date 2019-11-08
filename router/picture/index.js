@@ -8,7 +8,7 @@ const methods = {
     return "hello"
   },
 
-  async getList() {
+  async getList(ctx, next) {
     let res = await axios.get("https://e621.net/post?tags=eevee")
     const data = res.data
     let info = []

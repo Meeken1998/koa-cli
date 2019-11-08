@@ -11,12 +11,12 @@ routerList.map(val => {
   switch (val.method) {
     case "POST":
       router.post(val.route, async (ctx, next) => {
-        ctx.body = await val.cb()
+        ctx.body = await val.cb(ctx, next)
       })
 
     case "GET":
       router.get(val.route, async (ctx, next) => {
-        ctx.body = await val.cb()
+        ctx.body = await val.cb(ctx, next)
       })
   }
 })
